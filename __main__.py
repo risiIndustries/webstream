@@ -8,13 +8,13 @@ class Storage:
     def load_from_yaml(ymlfile):
         with open(ymlfile, "r") as file:
             data = yaml.safe_load(file)
-        self.apps = data
+        self.apps = self.yaml_data_to_list(data)
 
     def load_from_url(self, url):
         try:
             r = requests.get(url)
             yaml.safe_load(r.content)
-            self.apps = r
+            self.apps = self.yaml_data_to_list(yaml.safe_load(r.content))
             return True
         except (requests.ConnectionError, requests.HTTPError, requests.RequestException) as error:
             return error
@@ -83,15 +83,12 @@ class Storage:
         return False
 
 class WebApp:
-    def __init__(self, appid, name, url, description, catagory, price, tags):
-        self.appid = ""
-        self.name = ""
-        self.url = ""
-        self.description = ""
-        self.category = ""
-        self.price = ""
-        self.tags = []
+    def __init__(self, appid, name, url, description, category, price, tags):
+        self.appid = appid
+        self.name = name
+        self.url = url
+        self.description = description
+        self.category = category
+        self.price = price
+        self.tags = tags
 
-apps = Storage()
-apps.load_from_url("https://raw.githubusercontent.com/risiOS/risi-webstream-repo/main/repo.yml")
-print()
