@@ -91,4 +91,3 @@ class WebApp:
         self.category = category
         self.price = price
         self.tags = tags
-
