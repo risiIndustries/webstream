@@ -38,6 +38,13 @@ class Storage:
             if app.id == id:
                 return app
         return False
+    
+    def get_apps_by_tag(self, tag):
+        apps = []
+        for app in self.apps:
+            if tag in app.tags:
+                apps.append(app)
+        return apps
 
     def get_apps_by_category(self, category):
         apps = []
