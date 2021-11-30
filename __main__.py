@@ -26,9 +26,9 @@ class Storage:
                 item,
                 data[item]["name"],
                 data[item]["url"],
+                data[item]["homepage"]
                 data[item]["description"],
                 data[item]["category"],
-                data[item]["price"],
                 data[item]["tags"]
             ))
         return output
@@ -83,11 +83,11 @@ class Storage:
         return False
 
 class WebApp:
-    def __init__(self, appid, name, url, description, category, price, tags):
+    def __init__(self, appid, name, url, homepage, description, category, tags):
         self.appid = appid
         self.name = name
         self.url = url
+        self.homepage = homepage
         self.description = description
         self.category = category
-        self.price = price
         self.tags = tags
