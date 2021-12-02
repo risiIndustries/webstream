@@ -26,7 +26,7 @@ class Storage:
                 item,
                 data[item]["name"],
                 data[item]["url"],
-                data[item]["homepage"]
+                data[item]["homepage"],
                 data[item]["description"],
                 data[item]["category"],
                 data[item]["tags"]
