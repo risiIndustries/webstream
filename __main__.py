@@ -28,7 +28,7 @@ class Storage:
                 data[item]["url"],
                 data[item]["homepage"],
                 data[item]["description"],
-                data[item]["category"],
+                data[item]["categories"],
                 data[item]["tags"]
             ))
         return output
