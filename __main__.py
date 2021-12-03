@@ -13,7 +13,6 @@ class Storage:
     def load_from_url(self, url):
         try:
             r = requests.get(url)
-            yaml.safe_load(r.content)
             self.apps = self.yaml_data_to_list(yaml.safe_load(r.content))
             return True
         except (requests.ConnectionError, requests.HTTPError, requests.RequestException) as error:
