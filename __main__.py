@@ -63,10 +63,10 @@ class Storage:
             for app in self.apps:
                 if term in app.name:
                     matched_name.append(app)
-                if term in app.comment:
-                    matched_comment.append(app)
                 if term in app.description:
                     matched_description.append(app)
+                if term in app.url:
+                    matched_url.append(app)
 
         apps = matched_name
         for app in matched_description:
